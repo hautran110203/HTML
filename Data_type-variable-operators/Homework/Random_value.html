@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+    <title>Random value</title>
+  </head>
+  <body>
+    <div>
+      <form
+        action="Random_value"
+        onsubmit="
+          event.preventDefault();
+          print_screen();
+        "
+      >
+        <legend>Random 2 số</legend>
+        <table>
+          <tr>
+            <th><label for="Min">Min </label></th>
+            <th><label for="Max">Max </label></th>
+          </tr>
+          <tr>
+            <td><input type="number" name="Min" id="Min" /></td>
+            <td><input type="number" name="Max" id="Max" /></td>
+
+            <td>
+              <input type="submit" value="Submit" />
+            </td>
+          </tr>
+        </table>
+      </form>
+    </div>
+    <div id="result">Kết quả</div>
+    <script>
+      function Random() {
+        let Min = Number(document.getElementById("Min").value);
+        let Max = Number(document.getElementById("Max").value);
+        return Math.floor(Math.random() * (Max - Min + 1)) + Min;
+      }
+      function print_screen() {
+        let result = Random();
+        document.getElementById("result").innerText = "Result: " + result;
+      }
+    </script>
+  </body>
+</html>
