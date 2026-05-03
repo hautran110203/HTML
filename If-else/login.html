@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=script, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let user = prompt('Nhap ten nguoi dung')
+        if (user == "Admin"){
+            let pass = prompt('Nhap pass')
+            if(pass == "TheMaster"){
+                alert("Welcom")
+            }else{
+                if(pass==null){
+                    alert("Canceled")
+                }
+                else{
+                    alert("Wrong password")
+                }
+            }
+        }else{
+            if(user==null){
+                alert("Canceled")
+            }else alert("i don't know you")
+        }
+    </script>
+</body>
+</html>
